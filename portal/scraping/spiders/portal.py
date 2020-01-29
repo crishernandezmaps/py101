@@ -77,7 +77,7 @@ class scraperApp(scrapy.Spider):
             item['lat'] = find_coordinates_in_script(source)[0]
             item['lon'] = find_coordinates_in_script(source)[1]
             item['portal'] = 'Portal Inmobiliario'
-            item['moneda'] = response.xpath('/html/body/main/div/div/div[2]/div[1]/section/div/div/fieldset/span/span[1]').extract()[0]
+            item['moneda'] = response.xpath('/html/body/main/div/div/div[2]/div[1]/section/div/div/fieldset/span/span[1]/text()').extract()[0]
             item['algo'] = 'algo'
             print(item)
             yield item

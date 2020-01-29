@@ -29,10 +29,3 @@ def el_mostrador(link_to_em):
 
 test = el_mostrador('https://www.elmostrador.cl/noticias/pais/2020/1/')
 print(test)
-
-
-
-
-'''
-<a href='http://google.com'>Google</a>
-'''
