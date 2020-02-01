@@ -1,6 +1,7 @@
 import requests as req
 from bs4 import BeautifulSoup
 import wget
+import pandas as pd
 
 def making_soup(url):
     resp = req.get(url)
@@ -12,6 +13,21 @@ seia = 'https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&i
 seia_dos = 'https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=2142543029'
 servel = 'https://www.servel.cl/padron-electoral-auditado-plebiscito-nacional-2020/'
 
+# Generating list of codes
+df = pd.read_html('https://zeus.sii.cl/avalu_cgi/br/brch10.sh')
+table_codes = df[-1]
+list_of_codes = table_codes[0][1:].values
+
+for i in list_of_codes:
+    try:
+        pdf_url = f"https://www.servel.cl/wp-content/uploads/2020/01/A{i}.pdf"
+        print(f'Downloading {i}')
+        wget.download(pdf_url)
+        print(pdf_url)
+    except:
+        pass
+
+"""
 def inside_project(u):
     my_soup = making_soup(u)
     list_of_a_tags = my_soup.find_all('a')
@@ -43,3 +59,4 @@ def get_file_from_sbif(code):
 l = ['10648']
 for i in l:
     get_file_from_sbif(i)            
+"""    

@@ -1,0 +1,11 @@
+--2020-01-30 20:29:58--  https://docreader.readspeaker.com/docreader/?cid=bzxcm
+Resolving docreader.readspeaker.com (docreader.readspeaker.com)... 185.78.172.243
+Connecting to docreader.readspeaker.com (docreader.readspeaker.com)|185.78.172.243|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 679 [text/html]
+Saving to: ‘index.html?cid=bzxcm’
+
+index.html?cid=bzxcm   0%[                    ]       0  --.-KB/s               index.html?cid=bzxcm 100%[===================>]     679  --.-KB/s    in 0s      
+
+2020-01-30 20:30:00 (15.1 MB/s) - ‘index.html?cid=bzxcm’ saved [679/679]
+
